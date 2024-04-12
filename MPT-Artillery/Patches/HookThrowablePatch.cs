@@ -25,11 +25,8 @@ namespace SSH_Artillery
             {
                 if (grenade is SmokeGrenade serverSmokeGrenade)
                 {
-                    if (serverSmokeGrenade.WeaponSource.TemplateId == "artillery_signal")
-                    {
-                        GrenadeSpawner spawner = grenade.gameObject.AddComponent<GrenadeSpawner>();
-                        spawner.Owner = serverSmokeGrenade.ProfileId;
-                    }
+                    GrenadeSpawner spawner = grenade.gameObject.AddComponent<GrenadeSpawner>();
+                    spawner.Owner = serverSmokeGrenade.ProfileId;
                 }
             }
         }
