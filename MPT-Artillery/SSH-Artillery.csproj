@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2DCA6041-B769-4BC7-9B14-2F93349AEDE7}</ProjectGuid>
+    <ProjectGuid>{EEA86378-4AA2-4AEA-801F-B326C34D83BA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SSH_Artillery</RootNamespace>
-    <AssemblyName>SSH-Artillery</AssemblyName>
+    <RootNamespace>MPT_Artillery</RootNamespace>
+    <AssemblyName>MPT-Artillery</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -32,28 +32,31 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>..\References\BepInEx\core\0Harmony.dll</HintPath>
-    </Reference>
-    <Reference Include="Aki.Build">
-      <HintPath>..\References\Managed\Aki.Build.dll</HintPath>
-    </Reference>
-    <Reference Include="Aki.Common">
-      <HintPath>..\References\Managed\Aki.Common.dll</HintPath>
+      <HintPath>References\BepInEx\core\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Aki.Reflection">
-      <HintPath>..\References\Managed\Aki.Reflection.dll</HintPath>
+      <HintPath>References\Managed\Aki.Reflection.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\References\Managed\Assembly-CSharp.dll</HintPath>
+      <HintPath>References\Managed\Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx">
-      <HintPath>..\References\BepInEx\core\BepInEx.dll</HintPath>
+      <HintPath>References\BepInEx\core\BepInEx.dll</HintPath>
     </Reference>
     <Reference Include="Comfort">
-      <HintPath>..\References\Managed\Comfort.dll</HintPath>
+      <HintPath>References\Managed\Comfort.dll</HintPath>
+    </Reference>
+    <Reference Include="ItemComponent.Types">
+      <HintPath>References\Managed\ItemComponent.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="ItemTemplate.Types">
+      <HintPath>References\Managed\ItemTemplate.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>References\BepInEx\core\Mono.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="MPT.Core">
-      <HintPath>E:\Games\SPT\BepInEx\plugins\MPT.Core.dll</HintPath>
+      <HintPath>References\BepInEx\plugins\MPT.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -64,23 +67,20 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
-      <HintPath>..\References\Managed\UnityEngine.dll</HintPath>
+      <HintPath>References\Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\References\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>References\Managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArtilleryEntry.cs" />
     <Compile Include="Classes\GrenadeSpawner.cs" />
+    <Compile Include="Classes\Shoot.cs" />
     <Compile Include="Packets\ArtilleryShotPacket.cs" />
     <Compile Include="Packets\CreateItemPacket.cs" />
     <Compile Include="Patches\HookThrowablePatch.cs" />
-    <Compile Include="Classes\Shoot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>copy "$(TargetPath)" "E:\Games\SPT\BepInEx\plugins\SSH-Artillery.dll"</PostBuildEvent>
-  </PropertyGroup>
 </Project>

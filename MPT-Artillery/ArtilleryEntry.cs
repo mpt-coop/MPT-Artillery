@@ -60,8 +60,8 @@ namespace SSH_Artillery
             if (MatchmakerAcceptPatches.IsClient)
             {
                 // Subscribe to both packets for creating an item & having the artillery fire
-                @event.Client._packetProcessor.SubscribeNetSerializable<ArtilleryShotPacket>(OnArtilleryShotPacket); 
-                @event.Client._packetProcessor.SubscribeNetSerializable<CreateItemPacket>(OnCreateItemPacket);
+                @event.Client.packetProcessor.SubscribeNetSerializable<ArtilleryShotPacket>(OnArtilleryShotPacket); 
+                @event.Client.packetProcessor.SubscribeNetSerializable<CreateItemPacket>(OnCreateItemPacket);
             }
         }
 

@@ -22,7 +22,7 @@ namespace SSH_Artillery
     {
         public static object MakeShot(BulletClass ammo, Vector3 shotPosition, Vector3 shotDirection, float speedFactor)
         {
-            GClass2988 obj = Shoot.ballisticsCalculator.CreateShot(ammo, shotPosition, shotDirection, 0, Singleton<GameWorld>.Instance.MainPlayer.ProfileId, Shoot.weapon, speedFactor, 0);
+            EftBulletClass obj = Shoot.ballisticsCalculator.CreateShot(ammo, shotPosition, shotDirection, 0, Singleton<GameWorld>.Instance.MainPlayer.ProfileId, Shoot.weapon, speedFactor, 0);
             Shoot.ballisticsCalculator.Shoot(obj);
             if (MatchmakerAcceptPatches.IsServer)
             {

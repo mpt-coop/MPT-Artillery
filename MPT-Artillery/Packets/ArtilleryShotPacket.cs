@@ -22,8 +22,8 @@ namespace SSH_Artillery.Packets
         public void Deserialize(NetDataReader reader)
         {
             this.BulletID = reader.GetString();
-            this.Position = MPTSerialization.Vector3Utils.Deserialize(reader);
-            this.Direction = MPTSerialization.Vector3Utils.Deserialize(reader);
+            this.Position = reader.GetVector3();
+            this.Direction = reader.GetVector3();
             this.SpeedFactor = reader.GetFloat();
         }
 
@@ -31,8 +31,8 @@ namespace SSH_Artillery.Packets
         public void Serialize(NetDataWriter writer)
         {
             writer.Put(BulletID);
-            MPTSerialization.Vector3Utils.Serialize(writer, Position);
-            MPTSerialization.Vector3Utils.Serialize(writer, Direction);
+            writer.Put(Position);
+            writer.Put(Direction);
             writer.Put(SpeedFactor);
         }
     }
